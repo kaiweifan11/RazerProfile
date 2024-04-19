@@ -6,14 +6,14 @@ const Profile = (props) =>{
 
     return (
         <div key={'profile' + index} className={`profile-item ${isActive? "active": ""}`} onClick={()=>handleClickProfile(profile.id)}>
-            <div className="profile-row-item profile-icon">{getIcon(profile.name, isActive)} </div>
+            <div className="profile-row-item profile-icon">{getIcon(profile.id, isActive)} </div>
             {interimProfile && isActive? 
                 (<input
                     autoFocus 
                     id="profileRename"
                     className="profile-item show"
                     placeholder="Enter Profile Name"
-                    maxlength="25"
+                    maxLength="25"
                     value={interimProfile.name !== "New Profile"? interimProfile.name : ''}
                     onChange={(e)=>handleProfileRename(e.target.value)}
                 />) :

@@ -28,8 +28,9 @@ const Profiles = () =>{
                 // save profile
                 const tempProfiles = [...profiles];
                 const index = getProfilePosition(profiles, active);
-                interimProfile.name = interimProfile.name.trim();
-                tempProfiles[index] = interimProfile;
+                const tempProfile = {...interimProfile}
+                tempProfile.name = tempProfile.name.trim();
+                tempProfiles[index] = tempProfile;
                 setProfiles(tempProfiles);
                 setInterimProfile(null);
 

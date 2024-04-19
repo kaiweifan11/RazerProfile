@@ -13,15 +13,15 @@ const LeftPanel = (props) =>{
     }
     
     const handleAdd = () =>{
-        const newIndex = getLastIndex(profiles) + 1;
+        const newId = getLastIndex(profiles) + 1;
         const tempProfiles = [...profiles];
         const newProfile = {
-            id: newIndex,
+            id: newId,
             name: "New Profile"
         }
         tempProfiles.push(newProfile)
         setProfiles(tempProfiles);
-        setActive(newIndex);
+        setActive(newId);
         setInterimProfile(newProfile);
         save(tempProfiles);
     }
@@ -32,7 +32,7 @@ const LeftPanel = (props) =>{
         tempProfiles.splice(index, 1);
         
         setProfiles(tempProfiles);
-        setActive(index-1);
+        setActive(tempProfiles[index-1].id);
         setIsShowDeleteCfm(false);
         save(tempProfiles);
     }
